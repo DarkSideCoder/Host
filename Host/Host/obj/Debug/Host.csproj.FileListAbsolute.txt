@@ -1,0 +1,9 @@
+c:\users\darkside\documents\visual studio 2015\Projects\Host\Host\bin\Debug\Host.exe.config
+C:\Users\DarkSide\Documents\Visual Studio 2015\Projects\Host\Host\bin\Debug\Host.exe
+C:\Users\DarkSide\Documents\Visual Studio 2015\Projects\Host\Host\bin\Debug\Host.pdb
+C:\Users\DarkSide\Documents\Visual Studio 2015\Projects\Host\Host\obj\Debug\Host.csprojResolveAssemblyReference.cache
+C:\Users\DarkSide\Documents\Visual Studio 2015\Projects\Host\Host\obj\Debug\Host.Form1.resources
+C:\Users\DarkSide\Documents\Visual Studio 2015\Projects\Host\Host\obj\Debug\Host.Properties.Resources.resources
+C:\Users\DarkSide\Documents\Visual Studio 2015\Projects\Host\Host\obj\Debug\Host.csproj.GenerateResource.Cache
+C:\Users\DarkSide\Documents\Visual Studio 2015\Projects\Host\Host\obj\Debug\Host.exe
+C:\Users\DarkSide\Documents\Visual Studio 2015\Projects\Host\Host\obj\Debug\Host.pdb
