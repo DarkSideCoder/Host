@@ -17,21 +17,82 @@ namespace Host
         {
             InitializeComponent();
         }
-
+        string caminho = @"C:\Windows\System32\drivers\etc\hosts";
+        #region buttons 
         private void button1_Click(object sender, EventArgs e)
         {
             OpenHosts();
         }
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Include();
+        }
+        private void button3_Click(object sender, EventArgs e)
+        {
+            unlocked();
+        }
+        private void button4_Click(object sender, EventArgs e)
+        {
+            save();
+        }
+        private void button5_Click(object sender, EventArgs e)
+        {
+            locked();
+        }
+        #endregion
+        #region Funções
         public void OpenHosts()
         {
-            string caminho = @"C:\Windows\System32\drivers\etc\hosts";
-            StreamWriter aqv = new StreamWriter(caminho, true);
-            string URL = "\r\n127.0.0.1 http://" + textBox1.Text +
-            " 127.0.0.1 http://www." + textBox1.Text;
+            textBox2.Text = "";
+            {
 
-            aqv.Write(URL);
-            aqv.Close();
-            MessageBox.Show(textBox1.Text + " blocked");
+                try
+                {
+                    StreamReader sr = new StreamReader(caminho, true);
+                    {
+                        string linha;
+                       
+                        while ((linha = sr.ReadLine()) != null)
+                        {
+                            textBox2.AppendText(linha);
+                            textBox2.AppendText("\n");
+                        }
+                        sr.Close();
+                    }
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show("Não é possivel ler o arquivo");
+                    MessageBox.Show(e.Message);
+                }
+
+            }
+        }        
+        public void unlocked()
+        {
+            textBox2.Enabled = true;
         }
+        public void locked()
+        {
+            textBox2.Enabled = false;
+        }
+        public void Include()
+        {          
+                string URL = "\r\n127.0.0.1 " + textBox1.Text +
+                " 127.0.0.1 " + textBox1.Text;
+                textBox2.AppendText(URL);             
+                MessageBox.Show(textBox1.Text + " blocked");
+        }
+        public void save()
+        {
+           // FileStream fs = new FileStream(caminho, FileMode.Create);
+            StreamWriter sw = new StreamWriter(caminho);
+            sw.Write("");
+            sw.Write(textBox2.Text);
+            sw.Flush();
+            sw.Close();
+            //fs.Close();
+        }
+        #endregion        
     }
 }
