@@ -78,9 +78,16 @@ namespace Host
         }
         public void Include()
         {          
-                string URL = "\r\n127.0.0.1 " + textBox1.Text;
-                textBox2.AppendText(URL);             
-                MessageBox.Show(textBox1.Text + " blocked");
+                if(textBox1.Text == null)
+                {
+                    messageBox.Show("Nenhum link foi inserido no campo.");
+                )
+                else
+                (
+                    string URL = "\r\n127.0.0.1 " + textBox1.Text;
+                    textBox2.AppendText(URL);             
+                    MessageBox.Show(textBox1.Text + " blocked");
+                )       
         }
         public void save()
         {
@@ -99,7 +106,7 @@ namespace Host
                 }
             catch (Exception e)
                 {
-                    MessageBox.Show("Não é possivel salvar o arquivo");
+                    MessageBox.Show("Erro ao gravar arquivo em modo usuario normal");
                     MessageBox.Show(e.Message);
                 }
         }
