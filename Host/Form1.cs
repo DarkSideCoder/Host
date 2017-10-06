@@ -78,20 +78,30 @@ namespace Host
         }
         public void Include()
         {          
-                string URL = "\r\n127.0.0.1 " + textBox1.Text +
-                " 127.0.0.1 " + textBox1.Text;
+                string URL = "\r\n127.0.0.1 " + textBox1.Text;
                 textBox2.AppendText(URL);             
                 MessageBox.Show(textBox1.Text + " blocked");
         }
         public void save()
         {
            // FileStream fs = new FileStream(caminho, FileMode.Create);
-            StreamWriter sw = new StreamWriter(caminho);
-            sw.Write("");
-            sw.Write(textBox2.Text);
-            sw.Flush();
-            sw.Close();
-            //fs.Close();
+           try
+                {
+                
+                StreamWriter sw = new StreamWriter(caminho);
+                    {
+                    sw.Write("");
+                    sw.Write(textBox2.Text);
+                    sw.Flush();
+                    sw.Close();
+                    //fs.Close();
+                    }
+                }
+            catch (Exception e)
+                {
+                    MessageBox.Show("Não é possivel salvar o arquivo");
+                    MessageBox.Show(e.Message);
+                }
         }
         #endregion        
     }
